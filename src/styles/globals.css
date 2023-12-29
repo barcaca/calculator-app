@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-main: 0deg 0% 90%;
+    --color-bg-toggle: 0deg 5% 81%;
+    --color-bg-screen: 0deg 0% 93%;
+    --color-primary-key: 185deg 42% 37%;
+    --color-primary-key-shd: 185deg 58% 25%;
+    --color-secondary-key: 25deg 98% 40%;
+    --color-secondary-key-shd: 25deg 99% 27%;
+    --color-tertiary-key: 45deg 7% 89%;
+    --color-tertiary-key-shd: 35deg 11% 61%;
+    --color-text-primary: 60deg 10% 19%;
+    --color-text-secondary: 0deg 0% 100%;
+    --color-text-white: 0deg 0% 100%;
+  }
+  :root[data-theme="dark"] {
+    --color-bg-main: 222deg 26% 31%;
+    --color-bg-toggle: 223deg 31% 20%;
+    --color-bg-screen: 224deg 36% 15%;
+    --color-primary-key: 225deg 21% 49%;
+    --color-primary-key-shd: 224deg 28% 35%;
+    --color-secondary-key: 6deg 63% 50%;
+    --color-secondary-key-shd: 6deg 70% 34%;
+    --color-tertiary-key: 30deg 25% 89%;
+    --color-tertiary-key-shd: 28deg 16% 65%;
+    --color-text-primary: 221deg 14% 31%;
+    --color-text-secondary: 0deg 0% 100%;
+    --color-text-white: 0deg 0% 100%;
+  }
+  :root[data-theme="punk"] {
+    --color-bg-main: 268deg 75% 9%;
+    --color-bg-toggle: 268deg 71% 12%;
+    --color-bg-screen: 268deg 71% 12%;
+    --color-primary-key: 281deg 89% 26%;
+    --color-primary-key-shd: 285deg 91% 52%;
+    --color-secondary-key: 176deg 100% 44%;
+    --color-secondary-key-shd: 177deg 92% 70%;
+    --color-tertiary-key: 268deg 47% 21%;
+    --color-tertiary-key-shd: 290deg 70% 36%;
+    --color-text-primary: 52deg 100% 62%;
+    --color-text-secondary: 198deg 20% 13%;
+    --color-text-white: 0deg 0% 100%;
+  }
+}

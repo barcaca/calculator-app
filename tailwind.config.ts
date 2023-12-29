@@ -1,20 +1,23 @@
-import type { Config } from 'tailwindcss'
+/** @type {import('tailwindcss').Config} */
 
-const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    colors: {
+      main: "hsl(var(--color-bg-main) / <alpha-value>)",
+      toggle: "hsl(var(--color-bg-toggle) / <alpha-value>)",
+      screen: "hsl(var(--color-bg-screen) / <alpha-value>)",
+      primary: "hsl(var(--color-primary-key) / <alpha-value>)",
+      "primary-shd": "hsl(var(--color-primary-key-shd) / <alpha-value>)",
+      secondary: "hsl(var(--color-secondary-key) / <alpha-value>)",
+      "secondary-shd": "hsl(var(--color-secondary-key-shd) / <alpha-value>)",
+      tertiary: "hsl(var(--color-tertiary-key) / <alpha-value>)",
+      "tertiary-shd": "hsl(var(--color-tertiary-key-shd) / <alpha-value>)",
+      "1": "hsl(var(--color-text-primary) / <alpha-value>)",
+      "2": "hsl(var(--color-text-secondary) / <alpha-value>)",
+      white: "hsl(var(--color-text-white) / <alpha-value>)",
     },
+    extend: {},
   },
-  plugins: [],
-}
-export default config
+  plugins: [require("@tailwindcss/typography")],
+};
