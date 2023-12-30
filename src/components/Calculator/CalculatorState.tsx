@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Hook for managing calculator state and logic
 export const useCalculatorState = () => {
@@ -6,6 +6,42 @@ export const useCalculatorState = () => {
   const [currentDisplay, setCurrentDisplay] = useState("0");
   const [operation, setOperation] = useState("");
   const [storedOperand, setStoredOperand] = useState("0");
+
+  // Adds an event listener to capture keyboard keys
+  useEffect(() => {
+    // Handles keyboard key presses
+    const handleKeyPress = (event: KeyboardEvent) => {
+      const key = event.key;
+
+      // Maps Enter to "="
+      if (key === "Enter") {
+        handleButtonClick("=");
+      }
+
+      // Maps Delete to "Reset"
+      if (key === "Delete") {
+        handleButtonClick("Reset");
+      }
+
+      // Maps Backspace to "Del"
+      if (key === "Backspace") {
+        handleButtonClick("Del");
+      }
+
+      // Checks if the pressed key is a number, operator, or special key
+      if (/[0-9+\-*/=.]/.test(key)) {
+        handleButtonClick(key);
+      }
+    };
+
+    // Adds the event listener
+    document.addEventListener("keydown", handleKeyPress);
+
+    // Removes the event listener when the component is unmounted
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  });
 
   // Function to handle button clicks based on button type
   const handleButtonClick = (buttonValue: string) => {

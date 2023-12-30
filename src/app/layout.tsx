@@ -13,6 +13,7 @@ const league_spartan = League_Spartan({
 // Define app metadata
 export const metadata: Metadata = {
   title: "Calculator App",
+  description: "Calculator App Challenge",
   generator: "Next.js",
   applicationName: "Calculator App",
   referrer: "origin-when-cross-origin",
